@@ -17,7 +17,7 @@ function App() {
   };
 
   const fetchTasks = async () => {
-    const response = await axios.get("http://localhost:3001/tasks");
+    const response = await axios.get("https://json-server-opal-one.vercel.app/tasks");
     setTasks(response.data);
   };
 
@@ -26,7 +26,7 @@ function App() {
   }, []);
 
   const deleteTaskById = async (id) => {
-    await axios.delete(`http://localhost:3001/tasks/${id}`);
+    await axios.delete(`https://json-server-opal-one.vercel.app/tasks/${id}`);
     const taskAfterDeleting = tasks.filter((task) => {
       return task.id !== id;
     });
@@ -34,7 +34,7 @@ function App() {
   };
 
   const editTaskById = async (id, updatedTitle, updatedTaskDesc) => {
-    const response = await axios.put(`http://localhost:3001/tasks/${id}`, {
+    const response = await axios.put(`https://json-server-opal-one.vercel.app/tasks/${id}`, {
       title: updatedTitle,
       taskDesc: updatedTaskDesc,
     });
