@@ -17,7 +17,7 @@ function App() {
   };
 
   const fetchTasks = async () => {
-    const response = await axios.get("https://json-server-six-roan.vercel.app/tasks");
+    const response = await axios.get("https://my-json-server.typicode.com/canberk164/json-server/tasks");
     setTasks(response.data);
   };
 
@@ -26,7 +26,7 @@ function App() {
   }, []);
 
   const deleteTaskById = async (id) => {
-    await axios.delete(`https://json-server-six-roan.vercel.app/tasks/${id}`);
+    await axios.delete(`https://my-json-server.typicode.com/canberk164/json-server/tasks/${id}`);
     const taskAfterDeleting = tasks.filter((task) => {
       return task.id !== id;
     });
@@ -34,7 +34,7 @@ function App() {
   };
 
   const editTaskById = async (id, updatedTitle, updatedTaskDesc) => {
-    const response = await axios.put(`https://json-server-six-roan.vercel.app/tasks/${id}`, {
+    const response = await axios.put(`https://my-json-server.typicode.com/canberk164/json-server/tasks/${id}`, {
       title: updatedTitle,
       taskDesc: updatedTaskDesc,
     });
