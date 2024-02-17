@@ -7,7 +7,7 @@ import axios from "axios";
 function App() {
   const [tasks, setTasks] = useState([]);
   const createTask = async (title, taskDesc) => {
-    const response = await axios.post("http://localhost:3001/tasks", {
+    const response = await axios.post("https://my-json-server.typicode.com/canberk164/json-server/tasks", {
       title,
       taskDesc,
     });
