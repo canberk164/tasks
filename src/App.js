@@ -7,7 +7,7 @@ import axios from "axios";
 function App() {
   const [tasks, setTasks] = useState([]);
   const createTask = async (title, taskDesc) => {
-    const response = await axios.post("https://my-json-server.typicode.com/canberk164/tasksDB/tasks", {
+    const response = await axios.post("https://tasksdb.onrender.com/tasks", {
       title,
       taskDesc,
     });
@@ -17,7 +17,7 @@ function App() {
   };
 
   const fetchTasks = async () => {
-    const response = await axios.get("https://my-json-server.typicode.com/canberk164/tasksDB/tasks");
+    const response = await axios.get("https://tasksdb.onrender.com/tasks");
     setTasks(response.data);
   };
 
@@ -26,7 +26,7 @@ function App() {
   }, []);
 
   const deleteTaskById = async (id) => {
-    await axios.delete(`https://my-json-server.typicode.com/canberk164/tasksDB/tasks/${id}`);
+    await axios.delete(`https://tasksdb.onrender.com/tasks/${id}`);
     const taskAfterDeleting = tasks.filter((task) => {
       return task.id !== id;
     });
@@ -34,7 +34,7 @@ function App() {
   };
 
   const editTaskById = async (id, updatedTitle, updatedTaskDesc) => {
-    const response = await axios.put(`https://my-json-server.typicode.com/canberk164/tasksDB/tasks/${id}`, {
+    const response = await axios.put(`https://tasksdb.onrender.com/tasks/${id}`, {
       title: updatedTitle,
       taskDesc: updatedTaskDesc,
     });
